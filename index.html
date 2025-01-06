@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tic-Tac-Toe</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="game">
+    <form>
+      <div class="board">
+        <!-- Board Lines -->
+        <svg class="board__line" style="--x: 1; --y: 0">
+          <path d="M 5 5 L 295 5" fill="none" stroke-width="10" stroke-linecap="round"></path>
+        </svg>
+        <svg class="board__line" style="--x: 2; --y: 0">
+          <path d="M 5 5 L 295 5" fill="none" stroke-width="10" stroke-linecap="round"></path>
+        </svg>
+        <svg class="board__line" style="--x: 0; --y: 1">
+          <path d="M 5 5 L 295 5" fill="none" stroke-width="10" stroke-linecap="round"></path>
+        </svg>
+        <svg class="board__line" style="--x: 0; --y: 2">
+          <path d="M 5 5 L 295 5" fill="none" stroke-width="10" stroke-linecap="round"></path>
+        </svg>
+
+        <!-- Game Cells -->
+        <!-- Generate cells dynamically -->
+        <div class="board__cells">
+          <!-- X and O inputs -->
+          ${Array.from({ length: 9 })
+            .map(
+              (_, index) => `
+            <input type="checkbox" id="x--${index}" style="--col: ${index % 3}; --row: ${Math.floor(index / 3)}" />
+            <span style="--col: ${index % 3}; --row: ${Math.floor(index / 3)}">
+              <svg class="x">
+                <path d="M 20 20 L 80 80" fill="none" stroke-width="10" stroke-linecap="round"></path>
+                <path d="M 80 20 L 20 80" fill="none" stroke-width="10" stroke-linecap="round"></path>
+              </svg>
+              <svg class="o">
+                <circle cx="50" cy="50" r="30" fill="none" stroke-width="10" stroke-linecap="round"></circle>
+              </svg>
+            </span>
+            <label for="x--${index}" style="--col: ${index % 3}; --row: ${Math.floor(index / 3)}"></label>
+          `
+            )
+            .join("")}
+        </div>
+      </div>
+
+      <!-- Results -->
+      <div class="board__result board__result--x">
+        <div class="result__content">
+          <h2 class="result__title">Winner!</h2>
+          <p class="result__details">Player X wins</p>
+          <button class="result__reset" type="reset">Play Again</button>
+        </div>
+      </div>
+
+      <div class="board__result board__result--o">
+        <div class="result__content">
+          <h2 class="result__title">Winner!</h2>
+          <p class="result__details">Player O wins</p>
+          <button class="result__reset" type="reset">Play Again</button>
+        </div>
+      </div>
+
+      <div class="board__result board__result--draw">
+        <div class="result__content">
+          <h2 class="result__title">Draw!</h2>
+          <button class="result__reset" type="reset">Play Again</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
