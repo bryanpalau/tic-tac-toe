@@ -52,10 +52,12 @@ input:checked + label span {
 
 .x path {
   stroke: #36dbd7;
+  stroke-width: 10;
 }
 
 .o circle {
   stroke: #f62459;
+  stroke-width: 10;
 }
 
 /* Result Screen */
@@ -66,7 +68,7 @@ input:checked + label span {
   width: 100%;
   height: 100%;
   background: rgba(31, 58, 147, 0.8);
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -78,4 +80,18 @@ input:checked + label span {
   padding: 20px;
   border-radius: 8px;
   text-align: center;
+}
+
+.result__reset {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  background-color: #1f3a93;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.result__reset:hover {
+  background-color: #144a73;
 }

@@ -13,39 +13,16 @@
         <!-- Game cells will be dynamically generated here -->
       </div>
 
-      <!-- Results -->
+      <!-- Result -->
       <div class="board__result board__result--draw">
         <div class="result__content">
           <h2 class="result__title">Draw!</h2>
-          <button class="result__reset" type="reset">Play Again</button>
+          <button class="result__reset" type="button">Play Again</button>
         </div>
       </div>
     </form>
   </div>
 
-  <script>
-    // Dynamically generate the game cells
-    const board = document.getElementById('game-board');
-    const cells = Array.from({ length: 9 })
-      .map(
-        (_, index) => `
-        <input type="checkbox" id="cell-${index}" style="--col: ${index % 3}; --row: ${Math.floor(index / 3)}" />
-        <label for="cell-${index}" style="--col: ${index % 3}; --row: ${Math.floor(index / 3)}">
-          <span>
-            <svg class="x">
-              <path d="M 20 20 L 80 80" fill="none" stroke-width="10"></path>
-              <path d="M 80 20 L 20 80" fill="none" stroke-width="10"></path>
-            </svg>
-            <svg class="o">
-              <circle cx="50" cy="50" r="30" fill="none" stroke-width="10"></circle>
-            </svg>
-          </span>
-        </label>
-      `
-      )
-      .join('');
-
-    board.innerHTML = cells;
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
