@@ -1,28 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tic-Tac-Toe</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="game">
-    <form>
-      <div class="board" id="game-board">
-        <!-- Game cells will be dynamically generated here -->
-      </div>
-
-      <!-- Result -->
-      <div class="board__result board__result--draw">
-        <div class="result__content">
-          <h2 class="result__title">Draw!</h2>
-          <button class="result__reset" type="button">Play Again</button>
+    <!-- Stars container -->
+    <div class="stars"></div>
+    
+    <div class="game">
+        <div class="board" id="game-board">
+            <!-- Grid Lines -->
+            <div class="board__line horizontal" style="top: 33.33%"></div>
+            <div class="board__line horizontal" style="top: 66.66%"></div>
+            <div class="board__line vertical" style="left: 33.33%"></div>
+            <div class="board__line vertical" style="left: 66.66%"></div>
+            
+            <!-- Game Cells -->
+            <div class="cell" data-index="0"></div>
+            <div class="cell" data-index="1"></div>
+            <div class="cell" data-index="2"></div>
+            <div class="cell" data-index="3"></div>
+            <div class="cell" data-index="4"></div>
+            <div class="cell" data-index="5"></div>
+            <div class="cell" data-index="6"></div>
+            <div class="cell" data-index="7"></div>
+            <div class="cell" data-index="8"></div>
         </div>
-      </div>
-    </form>
-  </div>
 
-  <script src="script.js"></script>
+        <!-- Result Screen -->
+        <div class="board__result">
+            <div class="result__content">
+                <h2 class="result__title">Draw!</h2>
+                <button class="result__reset" type="button">Play Again</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
